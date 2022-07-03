@@ -1,32 +1,25 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="app"
+       class="wrapper">
+    <header-layout/>
+    <router-view></router-view>
+    <footer-layout/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
+import HeaderLayout from './components/layout/HeaderLayout'
+import FooterLayout from './components/layout/FooterLayout'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  name: 'App',
+  components: {
+    FooterLayout,
+    HeaderLayout
   }
 }
-</style>
+</script>
+
+<style src="./../src/assets/scss/main.scss" lang="scss"></style>
+
