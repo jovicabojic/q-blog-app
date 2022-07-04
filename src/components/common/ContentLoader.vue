@@ -17,7 +17,9 @@ export default {
 
 <style lang="scss" scoped>
 @keyframes spinner-border {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .spinner-border {
@@ -29,13 +31,14 @@ export default {
   border-right-color: transparent;
   border-radius: 50%;
   animation: spinner-border .75s linear infinite;
+
   & .sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
     padding: 0;
     overflow: hidden;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
   }

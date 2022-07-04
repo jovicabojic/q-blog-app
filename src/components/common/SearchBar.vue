@@ -34,10 +34,10 @@ export default {
   methods: {
     ...mapMutations(['setSearch']),
     ...mapActions(['getPosts']),
-    submitSearch () {
+    submitSearch() {
       this.setSearch(this.query)
     },
-    clearSearch () {
+    clearSearch() {
       this.query = ''
       this.setSearch(this.query)
     }
@@ -54,6 +54,7 @@ export default {
       max-width: 250px;
       margin: 0 auto;
       position: relative;
+
       .input-field {
         background: $light;
         border-radius: 25px;
@@ -70,6 +71,7 @@ export default {
           outline: none;
         }
       }
+
       & .material-icons {
         position: absolute;
         right: 10px;

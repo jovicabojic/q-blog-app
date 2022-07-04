@@ -9,17 +9,17 @@ const state = {
 }
 
 const getters = {
-    posts (state) {
+    posts(state) {
         return state.posts
     },
-    post (state) {
-      return state.post
+    post(state) {
+        return state.post
     },
-    loadingPosts (state) {
+    loadingPosts(state) {
         return state.loadingPosts
     },
     getPostsByUserName: (state, rootGetters) => {
-        return state.posts.filter(post => rootGetters.getUserIdsByName(state.search).includes( post.userId))
+        return state.posts.filter(post => rootGetters.getUserIdsByName(state.search).includes(post.userId))
     }
 }
 
@@ -39,7 +39,7 @@ const mutations = {
 }
 
 const actions = {
-    getPosts ({ commit }) {
+    getPosts({commit}) {
         commit('setPosts', null)
         commit('setLoadingPosts', true)
 
@@ -54,7 +54,7 @@ const actions = {
                 commit('setLoadingPosts', false)
             })
     },
-    getPost ({ commit }, id) {
+    getPost({commit}, id) {
         commit('setPost', null)
         commit('setLoadingPosts', true)
 
@@ -62,7 +62,7 @@ const actions = {
             .then(res => {
                 commit('setPost', res.data)
                 const postId = res.data.id
-                comments.actions.getComments({ commit }, postId)
+                comments.actions.getComments({commit}, postId)
             })
             .catch(error => {
                 console.log('Error occurred getPost:', error)

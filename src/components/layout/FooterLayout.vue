@@ -14,21 +14,23 @@
 <script>
 export default {
   name: 'FooterLayout',
-  data: () => ({
-  }),
+  data: () => ({}),
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../../assets/scss/base/colors";
+
 footer {
   background: $black;
   color: $white;
   height: 50px;
   box-sizing: border-box;
+
   & a {
     color: rgba($light, .5);
     text-decoration: none;
+
     &:hover {
       color: rgba($light, 1);
       text-decoration: underline;

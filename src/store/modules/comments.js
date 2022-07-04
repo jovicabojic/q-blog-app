@@ -9,7 +9,7 @@ const getters = {
     comments(state) {
         return state.comments
     },
-    loadingComments (state) {
+    loadingComments(state) {
         return state.loadingComments
     },
 }

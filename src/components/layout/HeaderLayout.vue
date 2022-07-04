@@ -21,8 +21,7 @@
 
 export default {
   name: 'HeaderLayout',
-  data: () => ({
-  })
+  data: () => ({})
 }
 </script>
 
@@ -32,6 +31,7 @@ header {
   height: 80px;
   box-sizing: border-box
 }
+
 .logo {
   width: 50px;
 }
