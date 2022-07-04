@@ -8,12 +8,12 @@
                placeholder="Search..."
                aria-label="Search..."
                v-model="query"/>
-        <span class="btn-search btn-close-icon position-absolute"
+        <span class="material-icons"
               v-if="query"
-              @click="clearSearch"></span>
-        <span class="btn-search btn-magnifier-icon position-absolute"
+              @click="clearSearch">close</span>
+        <span class="material-icons"
               v-else
-              @click="submitSearch"></span>
+              @click="submitSearch">search</span>
       </div>
     </form>
   </div>
@@ -37,7 +37,6 @@ export default {
     ...mapActions(['getPosts']),
     submitSearch () {
       this.setSearch(this.query)
-      console.log(this.getPostsByUserName)
     },
     clearSearch () {
       this.query = ''

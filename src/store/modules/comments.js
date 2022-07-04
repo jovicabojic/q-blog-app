@@ -5,7 +5,7 @@ const state = {
 }
 
 const getters = {
-    comments (state) {
+    comments(state) {
         return state.comments
     }
 }
@@ -17,13 +17,11 @@ const mutations = {
 }
 
 const actions = {
-    getComments ({ commit }, id) {
-        console.log(id)
+    getComments({commit}, id) {
         commit('setComments', null)
 
         axios.get('comments?postId=' + id)
             .then(response => {
-                console.log(response.data)
                 commit('setComments', response.data)
             })
             .catch(err => {

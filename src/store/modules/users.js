@@ -5,7 +5,7 @@ const state = {
 }
 
 const getters = {
-    users (state) {
+    users(state) {
         return state.users
     },
     getUserById: (state) => (id) => {
@@ -26,15 +26,15 @@ const mutations = {
 }
 
 const actions = {
-    getUsers ({ commit }) {
+    getUsers({commit}) {
         commit('setUsers', [])
 
         axios.get('/users')
             .then(response => {
                 commit('setUsers', response.data)
             })
-            .catch(err => {
-                console.log('Error occurred getUsers:', err)
+            .catch(error => {
+                console.log('Error occurred getUsers:', error)
             })
     }
 }

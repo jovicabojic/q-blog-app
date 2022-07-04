@@ -14,9 +14,8 @@
       </div>
     </section>
     <div v-else>
-      <div class="row">
-        <div class="col-md-12 text-center"
-             data-test-id="no-posts">
+      <div class="column-row">
+        <div class="column-12 text-center">
           Sorry, no posts...
         </div>
       </div>
@@ -44,14 +43,10 @@ export default {
       'getUserById',
       'getPostsByUserName'
     ]),
-    userName() {
-      return this.$store.getters["userName"];
-    }
   },
   methods: {
     ...mapActions(['getPosts']),
-    ...mapActions(['getPost']),
-    ...mapActions(['getUsername']),
+    ...mapActions(['getPost'])
   },
   mounted () {
     this.getPosts();

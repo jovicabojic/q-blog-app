@@ -64,8 +64,8 @@ const actions = {
                 const postId = res.data.id
                 comments.actions.getComments({ commit }, postId)
             })
-            .catch(e => {
-                console.log('Error occurred getPost:', e)
+            .catch(error => {
+                console.log('Error occurred getPost:', error)
             })
             .finally(() => {
                 commit('setLoadingPosts', false)
