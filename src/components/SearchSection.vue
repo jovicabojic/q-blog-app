@@ -8,7 +8,7 @@
               Type something name to search...
             </h2>
             <div class="row">
-              <SearchBar :submit="submitSearch"/>
+              <SearchBar />
             </div>
           </div>
         </div>
@@ -17,17 +17,10 @@
   </section>
 </template>
 <script>
-import { mapActions } from 'vuex'
 import SearchBar from './common/SearchBar'
 
 export default {
   name: 'SearchSection',
   components: { SearchBar },
-  methods: {
-    ...mapActions(['getPosts']),
-    submitSearch (query) {
-      this.getPosts([query])
-    }
-  }
 }
 </script>

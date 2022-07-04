@@ -6,7 +6,7 @@
                    exact
                    tag="a"
                    to="/">
-        <img src="../../assets/img/logo.png"
+        <img src="../../assets/img/logo.png" alt="logo"
              class="logo"/>
       </router-link>
     </div>

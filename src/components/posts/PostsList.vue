@@ -3,12 +3,12 @@
     <div v-if="loadingPosts">
       <ContentLoader/>
     </div>
-    <section v-else-if="posts && posts.length > 0">
+    <section v-else-if="getPostsByUserName.length > 0">
       <div class="column-row">
-        <div v-for="(post, index) in posts"
+        <div v-for="(post, index) in getPostsByUserName"
              :key="`${index}-${post.id}`"
              class="column-3">
-          <p>{{post.userId}}</p>
+          <p>{{getUserById(post.userId).name}}</p>
           <SinglePost :post="post"/>
         </div>
       </div>
@@ -38,10 +38,12 @@ export default {
     SinglePost
   },
   computed: {
-    ...mapGetters({
-      posts: 'posts',
-      loadingPosts: 'loadingPosts',
-    }),
+    ...mapGetters([
+      'posts',
+      'loadingPosts',
+      'getUserById',
+      'getPostsByUserName'
+    ]),
     userName() {
       return this.$store.getters["userName"];
     }

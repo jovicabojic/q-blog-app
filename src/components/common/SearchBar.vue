@@ -7,7 +7,6 @@
                class="form-control"
                placeholder="Search..."
                aria-label="Search..."
-               @enter="submitSearch"
                v-model="query"/>
         <span class="btn-search btn-close-icon position-absolute"
               v-if="query"
@@ -21,27 +20,28 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import {mapActions, mapGetters, mapMutations} from 'vuex'
 
 export default {
   name: 'SearchBar',
   data: () => ({
     query: ''
   }),
-  props: {
-    submit: {
-      type: Function,
-      required: true
-    }
+  computed: {
+    ...mapGetters([
+      'getPostsByUserName',
+    ]),
   },
   methods: {
+    ...mapMutations(['setSearch']),
     ...mapActions(['getPosts']),
     submitSearch () {
-      this.submit(this.query)
+      this.setSearch(this.query)
+      console.log(this.getPostsByUserName)
     },
     clearSearch () {
       this.query = ''
-      this.submit()
+      this.setSearch(this.query)
     }
   }
 }

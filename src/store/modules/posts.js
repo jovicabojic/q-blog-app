@@ -2,7 +2,8 @@ import axios from 'axios'
 import comments from "@/store/modules/comments";
 
 const state = {
-    posts: null,
+    search: '',
+    posts: [],
     post: null,
     loadingPosts: false
 }
@@ -16,6 +17,9 @@ const getters = {
     },
     loadingPosts (state) {
         return state.loadingPosts
+    },
+    getPostsByUserName: (state, rootGetters) => {
+        return state.posts.filter(post => rootGetters.getUserIdsByName(state.search).includes( post.userId))
     }
 }
 
@@ -28,6 +32,9 @@ const mutations = {
     },
     setLoadingPosts: (state, payload) => {
         state.loadingPosts = payload
+    },
+    setSearch: (state, payload) => {
+        state.search = payload
     }
 }
 

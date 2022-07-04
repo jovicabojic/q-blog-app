@@ -1,12 +1,21 @@
 import axios from 'axios'
 
 const state = {
-    users: null
+    users: []
 }
 
 const getters = {
     users (state) {
         return state.users
+    },
+    getUserById: (state) => (id) => {
+        return state.users ? state.users.find(u => u.id === id) : ''
+    },
+    getUserIdsByName: (state) => (name) => {
+        return state.users.reduce((acc, u) => {
+            const userFound = u.name.toLowerCase().includes(name.toLowerCase())
+            return userFound ? [...acc, u.id] : [...acc]
+        }, [])
     }
 }
 
@@ -18,7 +27,7 @@ const mutations = {
 
 const actions = {
     getUsers ({ commit }) {
-        commit('setUsers', null)
+        commit('setUsers', [])
 
         axios.get('/users')
             .then(response => {
