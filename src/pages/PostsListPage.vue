@@ -1,10 +1,12 @@
 <template>
-  <div class="row">
-    <div class="col-md-12">
-      <SearchSection/>
-      <PostsList/>
+  <section class="wrapper-fullwidth">
+    <div class="column-row">
+      <div class="column-12">
+        <SearchSection/>
+        <PostsList/>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
 import SearchSection from '../components/SearchSection'

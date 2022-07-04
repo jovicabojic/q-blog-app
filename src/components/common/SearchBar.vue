@@ -1,10 +1,9 @@
 <template>
   <div class="input-group">
-    <form class="col-md-6 offset-md-3"
-          @submit.prevent="submitSearch">
+    <form @submit.prevent="submitSearch">
       <div class="form-group">
         <input type="text"
-               class="form-control"
+               class="input-field"
                placeholder="Search..."
                aria-label="Search..."
                v-model="query"/>
@@ -45,3 +44,38 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "../../assets/scss/base/colors";
+
+.input-group {
+  & form {
+    & .form-group {
+      max-width: 250px;
+      margin: 0 auto;
+      position: relative;
+      .input-field {
+        background: $light;
+        border-radius: 25px;
+        color: $dark;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 14px;
+        border: none;
+        padding: 5px 10px;
+        height: 36px;
+
+        &:focus-visible {
+          box-shadow: none;
+          outline: none;
+        }
+      }
+      & .material-icons {
+        position: absolute;
+        right: 10px;
+        top: 6px;
+      }
+    }
+  }
+}
+</style>

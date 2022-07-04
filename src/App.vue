@@ -1,6 +1,5 @@
 <template>
-  <div id="app"
-       class="wrapper">
+  <div id="app">
     <header-layout/>
     <router-view></router-view>
     <footer-layout/>

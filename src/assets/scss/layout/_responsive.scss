@@ -1,0 +1,27 @@
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+  .column-1, .column-2, .column-3, .column-4, .column-5, .column-6,
+  .column-7, .column-8, .column-9, .column-10, .column-11, .column-12 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+}
